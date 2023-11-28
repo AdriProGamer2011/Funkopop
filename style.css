@@ -1,7 +1,7 @@
 * {box-sizing: border-box;
 }
 
-#contenidor {
+.contenidor {
     position: relative;
     top: 50;
     height: 500px;
@@ -92,7 +92,7 @@
 
   #oreja-izq {
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   right: 200;
   bottom: 570 ;
@@ -100,14 +100,14 @@
   margin: auto;
   width: 0; 
   height: 0; 
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 50px solid rgb(0, 0, 0);
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 60px solid rgb(0, 0, 0);
 }
 
 #oreja-der {
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   right: -200;
   bottom: 570 ;
@@ -115,9 +115,9 @@
   margin: auto;
   width: 0; 
   height: 0; 
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 50px solid rgb(0, 0, 0);
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 60px solid rgb(0, 0, 0);
 }
 
 #enfadado-der {
@@ -289,7 +289,7 @@
   position: absolute;
   top: 800;
   left: 0;
-  right: -375;
+  right: -380;
   bottom: 0 ;
   z-index: 0;
   margin: auto;
@@ -304,21 +304,27 @@
 
 
 
-
+.logo {
+position: relative;
+margin: auto;
+z-index: 1;
+}
 
 #container {
   width:100%;
+  top: 185;
   height: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
+  position:absolute;
 }
 
 #borde {
   height:150px;
   width:250px;
-  position:relative;
+  position:absolute;
   overflow:hidden;
   z-index: 1;
 }
@@ -467,6 +473,8 @@
 
 
 
+
+
 #container {
   position: absolute;
   opacity: 0;
@@ -511,9 +519,20 @@
   }
 }
 
+
+
+
 #ojo-izq {
   animation-name: ojo-color;
-  animation-duration: 10000ms;
+  animation-duration: 3000ms;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+#ojo-der {
+  animation-name: ojo-color;
+  animation-duration: 3000ms;
   animation-delay: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -521,18 +540,106 @@
 
 @keyframes ojo-color {
   0% {
-      color: #fffb3b;
+      background-color: rgb(97, 0, 0);
+      border: thick solid rgb(235, 195, 17);
   }
   25% {
-    opacity: 1;
+    background-color:rgb(0, 0, 0);
+    border: thick solid white;
   }
   50% {
-  opacity: 0;
+    background-color: rgb(97, 0, 0);
+    border: thick solid rgb(235, 195, 17);
   }
   75% {
-  opacity: 1;
+    background-color:rgb(0, 0, 0) ;
+    border: thick solid white;
+
   }
-  90% {
-      opacity: 0;
+  100% {
+    background-color: rgb(97, 0, 0);
+    border: thick solid rgb(235, 195, 17);
   }
 }
+
+#nariz {
+  animation-name: rotacion-nariz;
+  animation-duration: 3000ms;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+#nariz2 {
+  animation-name: rotacion-nariz2;
+  animation-duration: 3000ms;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes rotacion-nariz {
+0% {
+  transform: rotate(72deg);
+}
+25% {
+transform: rotate(144deg);
+}
+50% {
+transform: rotate(216deg);
+}
+
+75% {
+transform: rotate(288deg);
+}
+
+100% {
+transform: rotate(360deg);
+}
+}
+
+@keyframes rotacion-nariz2 {
+  0% {
+    transform: rotate(-72deg);
+  }
+  25% {
+  transform: rotate(-144deg);
+  }
+  50% {
+  transform: rotate(-216deg);
+  }
+  
+  75% {
+  transform: rotate(-288deg);
+  }
+  
+  100% {
+  transform: rotate(-360deg);
+  }
+  }
+
+
+  #oreja-izq {
+    animation-name: anim-oreja;
+    animation-duration: 3000ms;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+
+  #oreja-der {
+    animation-name: anim-oreja;
+    animation-duration: 3000ms;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes anim-oreja {
+    0%   {left:0px; top:-5px;}
+    25% {left:0px; top:25px;}
+    50% {left:0px; top:-5px;}
+    75% {left:0px; top:25px;}
+    100% {left:0px; top:-5px;}
+  }
