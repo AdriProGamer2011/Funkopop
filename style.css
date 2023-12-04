@@ -151,6 +151,33 @@
   border-bottom: 200px solid rgb(0, 0, 0);
   transform: rotate(120deg);
 }
+
+#brazo-izq{
+  position: relative;
+  width: 100px;
+  height: 270px;
+  margin: auto;
+  left:-230px;
+  top: 515px;
+  transform: rotate(45deg);
+  z-index: -2 ;
+  background-color: #000;
+  border-radius: 50px 50px 50px;
+}
+
+#brazo-der{
+  position:relative;
+  width: 100px;
+  height: 270px;
+  margin: auto;
+  right: -230px;
+  top: 250px;
+  transform: rotate(-45deg);
+  z-index: 0-2;
+  background-color: #000;
+  border-radius: 50px 50px 50px;
+}
+
 #capa {
   position: absolute;
   top: 397px;
@@ -642,4 +669,56 @@ transform: rotate(360deg);
     50% {left:0px; top:-5px;}
     75% {left:0px; top:25px;}
     100% {left:0px; top:-5px;}
+  }
+
+  #brazo-der {
+    animation-name: anim-brazo-der;
+    animation-duration: 1000ms;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+
+  #brazo-izq {
+    animation-name: anim-brazo-izq;
+    animation-duration: 1000ms;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes anim-brazo-der {
+    0%   {left:180px; top:180px;}
+    50%  {left:230px; top:230px;}
+    100% {left:180px; top:180px;}
+   
+    0% {
+      transform: rotate(-72deg);
+    }
+   
+    50% {
+    transform: rotate(-130deg);
+    }
+    
+    100% {
+    transform: rotate(-72deg);
+    }
+  }
+
+  @keyframes anim-brazo-izq {
+    0%   {left:-150px; top:460px;}
+    50%  {left: -230px; top:510px;}
+    100% {left:-150px; top:460px;}
+   
+    0% {
+      transform: rotate(72deg);
+    }
+   
+    50% {
+    transform: rotate(130deg);
+    }
+    
+    100% {
+    transform: rotate(72deg);
+    }
   }
